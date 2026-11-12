@@ -121,6 +121,7 @@ const handleLogout = () => {
 }
 
 .profile-button {
+  width: 100%;
   display: flex;
   align-items: center;
   gap: 0.625rem;
@@ -153,12 +154,17 @@ const handleLogout = () => {
 }
 
 .profile-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-size: 0.875rem;
   font-weight: 500;
   color: #0f172a;
 }
 
 .chevron {
+  margin-left: auto;
   color: #64748b;
   transition: transform 0.2s ease;
 }
@@ -169,9 +175,10 @@ const handleLogout = () => {
 
 .dropdown-menu {
   position: absolute;
-  top: calc(100% + 0.5rem);
+  /* Sits in the sidebar footer, so open upward and match the footer width */
+  bottom: calc(100% + 8px);
+  left: 0;
   right: 0;
-  min-width: 280px;
   background: white;
   border: 1px solid #e2e8f0;
   border-radius: 10px;

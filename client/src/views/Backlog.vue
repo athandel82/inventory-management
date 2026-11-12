@@ -31,8 +31,8 @@
         <div class="card-header">
           <h3 class="card-title">Backlog Items</h3>
         </div>
-        <div v-if="backlogItems.length === 0" style="padding: 3rem; text-align: center;">
-          <p style="font-size: 1.125rem; color: #10b981; font-weight: 600;">
+        <div v-if="backlogItems.length === 0" class="empty-state">
+          <p>
             ✓ No backlog items - all orders can be fulfilled!
           </p>
         </div>
@@ -63,7 +63,7 @@
                   </span>
                 </td>
                 <td>
-                  <span :style="{ color: item.days_delayed > 7 ? '#ef4444' : '#f59e0b' }">
+                  <span :class="item.days_delayed > 7 ? 'delay-severe' : 'delay-moderate'">
                     {{ item.days_delayed }} days
                   </span>
                 </td>
@@ -150,3 +150,24 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.empty-state {
+  padding: 40px var(--space-5);
+  text-align: center;
+}
+
+.empty-state p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-success);
+}
+
+.delay-severe {
+  color: var(--color-danger);
+}
+
+.delay-moderate {
+  color: var(--color-warning);
+}
+</style>
