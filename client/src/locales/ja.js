@@ -201,6 +201,38 @@ export default {
     allMonths: 'すべての月'
   },
 
+  // Reports
+  reports: {
+    description: '四半期ごとの業績指標と月次の推移を表示します',
+    loading: 'レポートを読み込み中...',
+    error: 'レポートの読み込みに失敗しました',
+    quarterly: {
+      title: '四半期別業績',
+      quarter: '四半期',
+      totalOrders: '注文総数',
+      totalRevenue: '総売上',
+      avgOrderValue: '平均注文額',
+      fulfillmentRate: '出荷完了率'
+    },
+    trend: {
+      title: '月次売上推移'
+    },
+    monthOverMonth: {
+      title: '前月比分析',
+      month: '月',
+      orders: '注文数',
+      revenue: '売上',
+      change: '変化額',
+      growthRate: '成長率'
+    },
+    summary: {
+      totalRevenueYTD: '総売上（年初来）',
+      avgMonthlyRevenue: '月間平均売上',
+      totalOrdersYTD: '注文総数（年初来）',
+      bestQuarter: '最も好調な四半期'
+    }
+  },
+
   // Statuses
   status: {
     delivered: '配達済み',
